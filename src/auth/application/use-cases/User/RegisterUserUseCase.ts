@@ -6,7 +6,7 @@ import { User } from "../../../domain/entities/Veterinary";
 import { UserCreatedEvent } from "../../../domain/events/user/UserCreatedEvent";
 import { UserMapper } from "../../mappers/UserMapper";
 
-export class CreateUser{
+export class RegisterUserUseCase{
   private readonly repository: UserRepository
   constructor(repository: UserRepository){
     this.repository = repository
