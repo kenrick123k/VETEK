@@ -1,6 +1,5 @@
 import express from 'express'
-import { authRouter } from './auth/infrastructure/http/routes/authCentral'
-
+import { authRouter } from './auth/infrastructure/http/routes/authRouter'
 const app = express()
 
 app.use(express.json())
