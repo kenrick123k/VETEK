@@ -3,7 +3,7 @@ import { authRouter } from './auth/infrastructure/http/routes/authCentral'
 
 const app = express()
 
-app.use(express.json)
+app.use(express.json())
 
 app.use('/auth', authRouter)
 
