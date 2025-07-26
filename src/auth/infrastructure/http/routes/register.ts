@@ -7,7 +7,7 @@ const userRepository = new UserRepositoryImpl()
 const registerUseCase = new RegisterUserUseCase(userRepository)
 const registerController = new RegisterController(registerUseCase)
 
-export const register = Router()
+export const registerRouter = Router()
 
 
-register.post('/register', (req, res, next) => registerController.register(req, res, next))
+registerRouter.post('/register', (req, res, next) => registerController.register(req, res, next))
