@@ -22,6 +22,5 @@ export class RegisterController{
       next(error)
       console.log(error)
     }
-
   }
 }
