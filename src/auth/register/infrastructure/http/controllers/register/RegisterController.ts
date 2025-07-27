@@ -1,5 +1,5 @@
+import { NextFunction, Request, Response } from "express";
 import { RegisterUserUseCase } from "../../../../application/use-cases/User/RegisterUserUseCase.js";
-import { Request, Response, NextFunction } from "express";
 import { User } from "../../../../domain/entities/Veterinary.js";
 import { checkUser } from "../../../validation/schemas/UserSchema.js";
 

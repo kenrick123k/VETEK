@@ -1,8 +1,7 @@
+import { RowDataPacket } from "mysql2/promise";
 import { User } from "../../domain/entities/Veterinary.js";
 import { UserRepository } from "../../domain/repositories/UserRepository.js";
 import { pool } from "../Database/MySQL/MySQLConnection.js";
-import { RowDataPacket } from "mysql2/promise";
-import { Email } from "../../domain/value-objects/Email.js";
 import { UserMapperSql } from "../mappers/UserMapperSql.js";
 import { UserRaw } from "../types/UserRaw.js";
 

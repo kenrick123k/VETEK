@@ -1,8 +1,8 @@
 import { UserRepository } from "../../../domain/repositories/UserRepository.js";
-import { RegisterUserDTO } from "../../dtos/User/RegisterUserDTO.js";
 import { Email } from "../../../domain/value-objects/Email.js";
-import { ExistingUserException } from "../../services/ExistingUserException.js";
+import { RegisterUserDTO } from "../../dtos/User/RegisterUserDTO.js";
 import { UserMapper } from "../../mappers/UserMapper.js";
+import { ExistingUserException } from "../../services/ExistingUserException.js";
 
 export class RegisterUserUseCase{
   private readonly repository: UserRepository
