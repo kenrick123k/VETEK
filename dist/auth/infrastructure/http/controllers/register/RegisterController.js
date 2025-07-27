@@ -1,20 +1,21 @@
-import { checkUser } from "../../../validation/schemas/UserSchema";
+import { checkUser } from "../../../validation/schemas/UserSchema.js";
 export class RegisterController {
     constructor(registerUser) {
         this.registerUser = registerUser;
     }
     async register(req, res, next) {
         try {
+            console.log('llego a register controller');
             const result = await checkUser(req.body);
             if (!result.success) {
                 return res.status(400).json({ errors: result.error.message });
             }
             await this.registerUser.execute(result.data);
-            res.status(201).json({ message: 'User created successfully' });
+            return res.status(201).json({ message: 'User created successfully' });
         }
         catch (error) {
-            next(error);
-            console.log(error);
+            console.error(error); // primero loguea
+            next(error); // luego pasa el error a middleware
         }
     }
 }

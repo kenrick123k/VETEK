@@ -1,5 +1,5 @@
-import { User } from "../../domain/entities/Veterinary";
-import { Email } from "../../domain/value-objects/Email";
+import { User } from "../../domain/entities/Veterinary.js";
+import { Email } from "../../domain/value-objects/Email.js";
 export class UserMapperSql{
   static toDomain(row: any){
     return new User(

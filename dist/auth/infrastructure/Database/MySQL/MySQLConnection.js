@@ -1,6 +1,6 @@
 import bd from 'mysql2/promise';
 export const pool = bd.createPool({
-    host: '127.0.0.1',
+    host: 'localhost',
     user: 'root',
     password: '12345678',
     database: 'VETEK',

@@ -1,6 +1,6 @@
-import { User } from "../../domain/entities/Veterinary";
-import { Email } from "../../domain/value-objects/Email";
-import { RegisterUserDTO } from "../dtos/User/RegisterUserDTO";
+import { User } from "../../domain/entities/Veterinary.js";
+import { Email } from "../../domain/value-objects/Email.js";
+import { RegisterUserDTO } from "../dtos/User/RegisterUserDTO.js";
 export class UserMapper{
   static toDomain(dto: RegisterUserDTO){
     return new User(

@@ -1,12 +1,13 @@
-import { Email } from "../../../domain/value-objects/Email";
-import { ExistingUserException } from "../../services/ExistingUserException";
-import { UserMapper } from "../../mappers/UserMapper";
+import { Email } from "../../../domain/value-objects/Email.js";
+import { ExistingUserException } from "../../services/ExistingUserException.js";
+import { UserMapper } from "../../mappers/UserMapper.js";
 export class RegisterUserUseCase {
     constructor(repository) {
         this.repository = repository;
     }
     async execute(input) {
         const email = new Email(input.email);
+        console.log('llego al use case');
         const existingUser = await this.repository.findByEmail(email);
         if (existingUser)
             throw new ExistingUserException('User already exists', 400);

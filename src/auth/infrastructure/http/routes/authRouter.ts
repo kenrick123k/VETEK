@@ -1,5 +1,5 @@
-import { Router } from "express";
-import { registerRouter } from "./register";
+import { Router } from "express"
+import { registerRouter } from "./register.js"
 
 export const authRouter = Router()
 

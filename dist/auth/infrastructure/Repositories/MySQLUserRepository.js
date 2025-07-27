@@ -1,5 +1,5 @@
-import { pool } from "../Database/MySQL/MySQLConnection";
-import { UserMapperSql } from "../mappers/UserMapperSql";
+import { pool } from "../Database/MySQL/MySQLConnection.js";
+import { UserMapperSql } from "../mappers/UserMapperSql.js";
 export class UserRepositoryImpl {
     async save(user) {
         const query = 'INSERT INTO veterinary (name, email, password, phone) VALUES (?,?,?,?)';
@@ -17,7 +17,7 @@ export class UserRepositoryImpl {
     }
     async findByEmail(email) {
         const query = 'SELECT name, email, password, phone FROM veterinary WHERE email= ?';
-        const [rows] = await pool.execute(query, [email]);
+        const [rows] = await pool.execute(query, [email.value]);
         if (rows.length === 0)
             return null;
         const rawUser = rows[0];

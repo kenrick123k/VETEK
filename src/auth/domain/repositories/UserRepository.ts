@@ -4,6 +4,6 @@ export interface UserRepository{
   save(user: User): Promise<void>
 
   findByID(vet_id: number): Promise<User | null>
-  findByEmail(email: Email): Promise<User | null>
+  findByEmail(email: string): Promise<User | null>
   findByPhone(phone: string): Promise<User | null>
 }

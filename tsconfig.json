@@ -1,13 +1,17 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "target": "ES2020",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true
-  }
+    "target": "ES2020",                     // Moderno, compatible con Node 14+
+    "module": "ESNext",                     // Módulos ES para Node.js
+    "moduleResolution": "node",             // Resolver módulos estilo Node
+    "outDir": "./dist",                      // Carpeta destino compilado
+    "rootDir": "./src",                      // Carpeta fuente
+    "strict": true,                         // Más chequeos estrictos
+    "esModuleInterop": true,                // Para interoperar con CommonJS
+    "allowSyntheticDefaultImports": true,  // Importaciones por defecto más flexibles
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }
