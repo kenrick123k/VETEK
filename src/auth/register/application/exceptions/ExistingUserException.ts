@@ -7,7 +7,6 @@ export class ExistingUserException extends Error{
     this.statusCode = statusCode
     this.isOperational = isOperational
 
-    // Establece el nombre del error como el nombre de la clase
     this.name = this.constructor.name
   }
 }

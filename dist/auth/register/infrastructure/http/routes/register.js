@@ -4,14 +4,10 @@ import { UserRepositoryImpl } from "../../Repositories/User/MySQLUserRepository.
 import { RegisterController } from "../controllers/register/RegisterController.js";
 import { DefaultPasswordValidator } from "../../../domain/services/passwordValidator/DefaultPasswordValidator.js";
 import { BlacklistedPasswords } from "../../Repositories/Password/BlacklistedPasswords.js";
-
-const passwordBlacklist = new BlacklistedPasswords()
-const passwordValidator = new  DefaultPasswordValidator(passwordBlacklist)
-
-const userRepository = new UserRepositoryImpl()
-const registerUseCase = new RegisterUserUseCase(userRepository, passwordValidator)
-const registerController = new RegisterController(registerUseCase)
-
-export const registerRouter = Router()
-
-registerRouter.post('/', registerController.register.bind(registerController))
+const passwordBlacklist = new BlacklistedPasswords();
+const passwordValidator = new DefaultPasswordValidator(passwordBlacklist);
+const userRepository = new UserRepositoryImpl();
+const registerUseCase = new RegisterUserUseCase(userRepository, passwordValidator);
+const registerController = new RegisterController(registerUseCase);
+export const registerRouter = Router();
+registerRouter.post('/', registerController.register.bind(registerController));

@@ -1,9 +1,9 @@
 import { RowDataPacket } from "mysql2/promise";
-import { User } from "../../domain/entities/Veterinary.js";
-import { UserRepository } from "../../domain/repositories/UserRepository.js";
-import { pool } from "../Database/MySQL/MySQLConnection.js";
-import { UserMapperSql } from "../mappers/UserMapperSql.js";
-import { UserRaw } from "../types/UserRaw.js";
+import { User } from "../../../domain/entities/Veterinary.js";
+import { UserRepository } from "../../../domain/repositories/UserRepository.js";
+import { pool } from "../../Database/MySQL/MySQLConnection.js";
+import { UserMapperSql } from "../../mappers/UserMapperSql.js";
+import { UserRaw } from "../../types/UserRaw.js";
 
 export class UserRepositoryImpl implements UserRepository{
   async save(user: User): Promise<void> {
