@@ -16,15 +16,15 @@ export class RegisterController {
       console.log('llego a register controller');
       const result = await checkUser(req.body as User);
       if (!result.success) {
-        return res.status(400).json({ errors: result.error.message });
+        return res.status(400).json(JSON.parse(result.error.message));
       }
 
       await this.registerUser.execute(result.data)
       return res.status(201).json({ message: 'User created successfully' });
 
-    } catch (error) {
-      console.error(error);  // primero loguea
-      next(error);           // luego pasa el error a middleware
+    } catch (error: any) {
+      console.error(error);
+      next(error);
     }
   }
 }

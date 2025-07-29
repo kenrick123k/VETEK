@@ -6,5 +6,5 @@ export interface PasswordValidator {
   hasDigit(password: string): boolean;
   hasSpecialChar(password: string): boolean;
   isNotInBlacklist(password: string): Promise<boolean>;
-  isStrong(password: string): Promise<boolean>;
+  isStrong(password: string): Promise<void>;
 }

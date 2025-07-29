@@ -1,4 +1,4 @@
-export class WeakPasswordException extends Error{
+export abstract class WeakPasswordBase extends Error{
   public readonly statusCode: number
   public readonly isOperational: boolean
 
